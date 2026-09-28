@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useRestaurantMenu } from '../../hooks/useRestaurantMenu';
+import { useScrollSpy } from '../../hooks/useScrollSpy';
 import { useCart } from '../../context/CartContext';
 import MenuLayout from '../../layouts/MenuLayout';
 import MenuHeader from '../../components/menu/MenuHeader';
@@ -26,10 +27,14 @@ export default function CustomerMenuPage() {
     if (slug) setRestaurantSlug(slug);
   }, [slug, setRestaurantSlug]);
 
-  const featuredItems = useMemo(() => items.filter((i) => i.featured && i.available), [items]);
+  const sectionIds = useMemo(() => categories.map((c) => `category-${c.id}`), [categories]);
+  const activeSectionId = useScrollSpy(sectionIds);
+  const activeCategoryId = activeSectionId?.replace('category-', '');
+
   const heroSlides = useMemo(() => {
-    if (featuredItems.length > 0) {
-      return featuredItems.map((i) => ({
+    const withImages = items.filter((i) => i.available && i.image);
+    if (withImages.length > 0) {
+      return withImages.map((i) => ({
         id: i.id,
         image: i.image,
         caption: i.name,
@@ -37,7 +42,7 @@ export default function CustomerMenuPage() {
       }));
     }
     return (restaurant?.cover || []).map((image, idx) => ({ id: `cover-${idx}`, image, caption: null }));
-  }, [featuredItems, restaurant]);
+  }, [items, restaurant]);
 
   if (loading) {
     return (
@@ -65,7 +70,7 @@ export default function CustomerMenuPage() {
         onSlideClick={(slide) => slide.item && setSelectedItem(slide.item)}
       />
 
-      <CategoryNav items={items.filter((i) => i.available)} onOpenItem={setSelectedItem} />
+      <CategoryNav categories={categories} activeId={activeCategoryId} />
 
       <main>
         {categories.map((category) => (
@@ -89,7 +94,7 @@ export default function CustomerMenuPage() {
       <ItemDetailSheet item={selectedItem} onClose={() => setSelectedItem(null)} />
 
       <footer className={styles.footer}>
-        <span>Powered By</span>
+        <span>NovaIraq</span>
         <img src="/nova-logo.jpg" alt="Nova" className={styles.footerLogo} />
       </footer>
     </MenuLayout>
