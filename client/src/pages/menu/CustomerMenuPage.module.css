@@ -26,8 +26,18 @@
 }
 
 .footer {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 28px 16px 100px;
   color: var(--color-text-faint);
   font-size: 12px;
+}
+
+.footerLogo {
+  height: 20px;
+  width: auto;
+  border-radius: 4px;
+  object-fit: contain;
 }

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useRestaurantMenu } from '../../hooks/useRestaurantMenu';
-import { useScrollSpy } from '../../hooks/useScrollSpy';
 import { useCart } from '../../context/CartContext';
 import MenuLayout from '../../layouts/MenuLayout';
 import MenuHeader from '../../components/menu/MenuHeader';
@@ -26,10 +25,6 @@ export default function CustomerMenuPage() {
   useEffect(() => {
     if (slug) setRestaurantSlug(slug);
   }, [slug, setRestaurantSlug]);
-
-  const sectionIds = useMemo(() => categories.map((c) => `category-${c.id}`), [categories]);
-  const activeSectionId = useScrollSpy(sectionIds);
-  const activeCategoryId = activeSectionId?.replace('category-', '');
 
   const featuredItems = useMemo(() => items.filter((i) => i.featured && i.available), [items]);
   const heroSlides = useMemo(() => {
@@ -70,7 +65,7 @@ export default function CustomerMenuPage() {
         onSlideClick={(slide) => slide.item && setSelectedItem(slide.item)}
       />
 
-      <CategoryNav categories={categories} activeId={activeCategoryId} />
+      <CategoryNav items={items.filter((i) => i.available)} onOpenItem={setSelectedItem} />
 
       <main>
         {categories.map((category) => (
@@ -94,7 +89,8 @@ export default function CustomerMenuPage() {
       <ItemDetailSheet item={selectedItem} onClose={() => setSelectedItem(null)} />
 
       <footer className={styles.footer}>
-        <p>مشغّل بواسطة Digital Menu</p>
+        <span>Powered By</span>
+        <img src="/nova-logo.jpg" alt="Nova" className={styles.footerLogo} />
       </footer>
     </MenuLayout>
   );

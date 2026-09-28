@@ -19,6 +19,10 @@
   overflow: hidden;
   isolation: isolate;
   border: 1.5px solid var(--color-border);
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
   transition: border-color 0.2s ease, transform 0.15s ease;
 }
 .chip:active {
