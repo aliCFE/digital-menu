@@ -34,10 +34,11 @@
   padding: 28px 16px 100px;
   color: var(--color-text-faint);
   font-size: 13px;
+  font-weight: 700;
 }
 
 .footerLogo {
-  height: 34px;
+  height: 40px;
   width: auto;
   border-radius: 6px;
   object-fit: contain;
