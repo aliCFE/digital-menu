@@ -94,8 +94,8 @@ export default function CustomerMenuPage() {
       <ItemDetailSheet item={selectedItem} onClose={() => setSelectedItem(null)} />
 
       <footer className={styles.footer}>
-        <span>Powered By NovaIraq</span>
         <img src="/nova-logo.jpg" alt="Nova" className={styles.footerLogo} />
+        <span>Powered By NovaIraq</span>
       </footer>
     </MenuLayout>
   );
