@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import path from 'node:path';
+import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 import { seedIfEmpty } from './utils/seed.js';
@@ -41,6 +42,17 @@ app.use('/api/admin/categories', categoryRoutes);
 app.use('/api/admin/items', itemRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/upload', uploadRoutes);
+
+// In production, serve the built client and let React Router handle
+// client-side routes (anything not matched above and not under /api or
+// /uploads falls back to index.html).
+const clientDist = path.join(__dirname, '..', 'client', 'dist');
+if (fs.existsSync(clientDist)) {
+  app.use(express.static(clientDist));
+  app.get(/^(?!\/api|\/uploads).*/, (req, res) => {
+    res.sendFile(path.join(clientDist, 'index.html'));
+  });
+}
 
 app.use((req, res) => res.status(404).json({ error: 'Not found.' }));
 // eslint-disable-next-line no-unused-vars
