@@ -1,0 +1,16 @@
+.panel {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  padding: 24px;
+  box-shadow: var(--admin-shadow);
+  max-width: 420px;
+}
+
+.subTitle {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 8px 0 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--admin-border);
+}

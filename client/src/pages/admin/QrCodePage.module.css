@@ -1,0 +1,80 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+  color: var(--admin-primary);
+}
+
+.panel {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  padding: 28px;
+  box-shadow: var(--admin-shadow);
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.qrBox {
+  padding: 16px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--admin-border);
+  margin-bottom: 18px;
+}
+
+.qrImage {
+  width: 220px;
+  height: 220px;
+  display: block;
+}
+
+.linkRow {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--admin-text-muted);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.linkBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--admin-bg);
+  border: 1px solid var(--admin-border);
+  border-radius: 9px;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  color: var(--admin-text);
+}
+.linkBox span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.linkBox button {
+  flex-shrink: 0;
+  color: var(--admin-text-muted);
+}
+.linkBox button:hover {
+  color: var(--admin-primary);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.actions > * {
+  flex: 1;
+}

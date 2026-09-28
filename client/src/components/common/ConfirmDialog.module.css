@@ -1,0 +1,51 @@
+.message {
+  font-size: 14.5px;
+  color: var(--admin-text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancelBtn,
+.confirmBtn,
+.dangerBtn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+.cancelBtn:active,
+.confirmBtn:active,
+.dangerBtn:active {
+  transform: scale(0.97);
+}
+
+.cancelBtn {
+  background: var(--admin-bg);
+  color: var(--admin-text);
+}
+.cancelBtn:hover {
+  background: var(--admin-border);
+}
+
+.confirmBtn {
+  background: var(--admin-primary);
+  color: #fff;
+}
+.confirmBtn:hover {
+  background: var(--admin-primary-hover);
+}
+
+.dangerBtn {
+  background: var(--admin-danger);
+  color: #fff;
+}
+.dangerBtn:hover {
+  opacity: 0.9;
+}

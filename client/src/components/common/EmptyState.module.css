@@ -1,0 +1,19 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 56px 24px;
+  gap: 14px;
+}
+
+.icon {
+  font-size: 42px;
+}
+
+.title {
+  color: var(--admin-text-muted, var(--color-text-muted));
+  font-size: 15px;
+  max-width: 320px;
+}

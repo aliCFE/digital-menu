@@ -1,0 +1,127 @@
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.card:active {
+  transform: scale(0.98);
+}
+.card:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-border));
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--color-surface);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.soldOutOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 8, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.soldOutOverlay span {
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.badges {
+  position: absolute;
+  top: 8px;
+  inset-inline-start: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1;
+}
+.badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: #fff;
+}
+.badgeDiscount {
+  background: var(--color-danger, #e5484d);
+}
+.badgeNew {
+  background: #2d9c5a;
+}
+
+.addBtn {
+  position: absolute;
+  top: 8px;
+  inset-inline-end: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(10, 12, 11, 0.55);
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+.addBtn:hover {
+  background: var(--color-primary);
+  color: var(--color-button-text);
+}
+.addBtn:active {
+  transform: scale(0.88);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px 12px;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--color-text);
+  min-height: 2.7em;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.price {
+  color: var(--color-price);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.oldPrice {
+  color: var(--color-text-faint);
+  font-size: 12px;
+  text-decoration: line-through;
+}

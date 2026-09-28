@@ -1,0 +1,12 @@
+{
+  "name": "Digital Menu",
+  "short_name": "Menu",
+  "description": "Digital restaurant menu",
+  "start_url": "/r/tannour",
+  "display": "standalone",
+  "background_color": "#18201d",
+  "theme_color": "#18201d",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

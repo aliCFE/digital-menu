@@ -1,0 +1,192 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--admin-bg);
+  color: var(--admin-text);
+  font-family: 'Inter', var(--font-main);
+}
+
+.sidebar {
+  width: 248px;
+  flex-shrink: 0;
+  background: var(--admin-sidebar-bg);
+  color: var(--admin-sidebar-text);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  inset-block: 0;
+  inset-inline-start: 0;
+  z-index: 100;
+  transition: transform 0.25s ease;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 20px;
+  font-weight: 800;
+  color: #fff;
+  font-size: 15px;
+}
+.brandMark {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: var(--admin-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 12px;
+}
+
+.navGroup {
+  margin-bottom: 14px;
+}
+
+.groupLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.35);
+  padding: 10px 12px 6px;
+  font-weight: 700;
+}
+
+.navLink {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--admin-sidebar-text);
+  margin-bottom: 2px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+.navLinkActive {
+  background: var(--admin-primary);
+  color: #fff;
+}
+
+.sidebarFooter {
+  padding: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logoutBtn {
+  display: block;
+  width: 100%;
+  text-align: start;
+  padding: 10px 12px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f2a49a;
+}
+.logoutBtn:hover {
+  background: rgba(229, 72, 77, 0.15);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 90;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  margin-inline-start: 248px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+  background: var(--admin-surface);
+  border-bottom: 1px solid var(--admin-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.topbarSpacer {
+  flex: 1;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px;
+}
+.hamburger span {
+  width: 20px;
+  height: 2px;
+  background: var(--admin-text);
+  border-radius: 2px;
+}
+
+.langBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--admin-text-muted);
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: var(--admin-bg);
+}
+
+.adminName {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--admin-text);
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+}
+
+@media (max-width: 960px) {
+  .sidebar {
+    /* App is Arabic/RTL-only, so the sidebar (inset-inline-start: 0 → right
+       edge) hides by sliding off to the right. */
+    transform: translateX(100%);
+  }
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+  .main {
+    margin-inline-start: 0;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .content {
+    padding: 16px;
+  }
+  .adminName {
+    display: none;
+  }
+}

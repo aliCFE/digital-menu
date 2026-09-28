@@ -1,0 +1,131 @@
+.header {
+  position: relative;
+  background: var(--color-bg);
+  padding: 14px 16px 12px;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+
+.identityText {
+  min-width: 0;
+  flex: 1;
+}
+
+.logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1.5px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.iconBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  background: var(--color-surface);
+  transition: background 0.15s ease, transform 0.1s ease;
+  flex-shrink: 0;
+}
+.iconBtn:hover {
+  background: var(--color-border);
+}
+.iconBtn:active {
+  transform: scale(0.93);
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.phonePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.socialLink {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  transition: transform 0.15s ease;
+}
+.socialLink:hover {
+  transform: translateY(-2px);
+}
+.whatsapp { color: #25d366; }
+.facebook { color: #1877f2; }
+
+@media (min-width: 640px) {
+  .header {
+    padding: 18px 24px 14px;
+  }
+  .name {
+    font-size: 22px;
+    max-width: 320px;
+  }
+  .actions {
+    gap: 6px;
+  }
+  .iconBtn {
+    width: 38px;
+    height: 38px;
+  }
+}

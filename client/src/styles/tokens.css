@@ -1,0 +1,58 @@
+:root {
+  --color-bg: #18201d;
+  --color-surface: #29332e;
+  --color-surface-solid: #212a27;
+  --color-primary: #c65332;
+  --color-primary-shadow: #87301f;
+  --color-price: #e07a3f;
+  --color-text: #f4f1ec;
+  --color-text-muted: rgba(244, 241, 236, 0.64);
+  --color-text-faint: rgba(244, 241, 236, 0.42);
+  --color-border: rgba(255, 255, 255, 0.09);
+  --color-success: #34c77b;
+  --color-success-bg: rgba(52, 199, 123, 0.14);
+  --color-danger: #e5484d;
+  --color-danger-bg: rgba(229, 72, 77, 0.14);
+  --color-button-text: #ffffff;
+
+  --font-main: 'Cairo', 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+
+  --radius-card: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 10px 28px rgba(0, 0, 0, 0.28);
+  --shadow-pop: 0 16px 40px rgba(0, 0, 0, 0.4);
+  --shadow-sheet: 0 -12px 32px rgba(0, 0, 0, 0.35);
+
+  --max-content-width: 1152px;
+  --bottom-nav-clearance: 108px;
+
+  color-scheme: dark;
+}
+
+:root {
+  /* Admin dashboard tokens — intentionally independent of the customer
+     storefront's per-restaurant theme so editing Appearance never breaks
+     the dashboard's own readability. */
+  --admin-bg: #f5f6f8;
+  --admin-surface: #ffffff;
+  --admin-border: #e6e8ec;
+  --admin-text: #1a1d23;
+  --admin-text-muted: #6b7280;
+  --admin-primary: #c65332;
+  --admin-primary-hover: #ab4527;
+  --admin-primary-soft: rgba(198, 83, 50, 0.1);
+  --admin-success: #16a34a;
+  --admin-success-soft: rgba(22, 163, 74, 0.1);
+  --admin-warning: #d97706;
+  --admin-warning-soft: rgba(217, 119, 6, 0.1);
+  --admin-danger: #dc2626;
+  --admin-danger-soft: rgba(220, 38, 38, 0.1);
+  --admin-sidebar-bg: #171a21;
+  --admin-sidebar-text: rgba(255, 255, 255, 0.72);
+  --admin-sidebar-text-active: #ffffff;
+  --admin-radius: 12px;
+  --admin-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.08);
+}

@@ -1,0 +1,14 @@
+.root {
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.content {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding-bottom: var(--bottom-nav-clearance);
+  min-height: 100vh;
+}
