@@ -74,4 +74,12 @@ router.put('/:id/status', async (req, res) => {
   res.json(clean(updated));
 });
 
+router.delete('/:id', async (req, res) => {
+  const order = await collections.orders.findOne({ id: req.params.id, restaurantId: req.admin.restaurantId });
+  if (!order) return res.status(404).json({ error: 'Order not found.' });
+
+  await collections.orders.deleteOne({ id: order.id });
+  res.status(204).end();
+});
+
 export default router;

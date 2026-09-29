@@ -43,6 +43,18 @@ export default function OrdersPage() {
     }
   }
 
+  async function removeOrder(order) {
+    if (!window.confirm(`حذف الطلب ${order.orderNumber}؟`)) return;
+    setOrders((prev) => prev.filter((o) => o.id !== order.id));
+    try {
+      await orderService.deleteOrder(order.id);
+      toast.success('تم حذف الطلب.');
+    } catch (err) {
+      toast.error(err.message);
+      load();
+    }
+  }
+
   return (
     <div>
       <PageHeader title={t('admin.orders.title')} />
@@ -60,7 +72,17 @@ export default function OrdersPage() {
                   <p className={styles.orderNumber}>{order.orderNumber}</p>
                   <p className={styles.date}>{new Date(order.createdAt).toLocaleString('ar-IQ')}</p>
                 </div>
-                <Badge tone={STATUS_TONE[order.status]}>{t(`admin.orders.statuses.${order.status}`)}</Badge>
+                <div className={styles.headerActions}>
+                  <Badge tone={STATUS_TONE[order.status]}>{t(`admin.orders.statuses.${order.status}`)}</Badge>
+                  <button
+                    type="button"
+                    className={styles.deleteBtn}
+                    onClick={() => removeOrder(order)}
+                    aria-label="حذف الطلب"
+                  >
+                    حذف
+                  </button>
+                </div>
               </div>
 
               <div className={styles.cardBody}>

@@ -28,6 +28,27 @@
   margin-bottom: 12px;
 }
 
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.deleteBtn {
+  background: none;
+  border: 1px solid var(--admin-border);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #dc2626;
+  cursor: pointer;
+}
+.deleteBtn:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
 .orderNumber {
   font-size: 15px;
   font-weight: 800;
